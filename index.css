@@ -1,0 +1,160 @@
+/* Existing CSS styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #EEF0F4;
+    color: #432000;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    max-width: 320px;
+    margin: 30px auto;
+    height: 100vh; /* Make container full height of the viewport */
+    box-sizing: border-box; /* Include padding and border in height calculation */
+    padding: 20px; /* Add padding for spacing */
+}
+
+img {
+    width: 150px;
+    margin-left: 23%;
+}
+
+
+
+input, button {
+    color: #432000;
+    background-color: #DCE1EB;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin: 10px 0;
+    width: 100%; /* Set width to 100% for both input and button */
+    box-sizing: border-box; /* Include padding and border in the specified width */
+}
+
+button {
+    color: #FDFDFD;
+    background-color: #AC485A;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #432000;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    font-size: 20px;
+    background-color: #FFFDF8;
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+ul li:hover {
+    background-color: #FFECC7;
+    cursor: pointer;
+}
+
+/* Loader styles */
+.loader {
+    width: 35px;
+    height: 80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0 0 20px;
+    border-radius: 50px 50px 10px 10px;
+    padding: 1px;
+    background: linear-gradient(#ff4d80 33%, #ffa104 0 66%, #01ddc7 0) content-box;
+    --c: radial-gradient(farthest-side, #000 94%, #0000);
+    -webkit-mask:
+        linear-gradient(#0000 0 0),
+        var(--c) -10px -10px,
+        var(--c) 15px -14px,
+        var(--c) 9px -6px,
+        var(--c) -12px 9px,
+        var(--c) 14px 9px,
+        var(--c) 23px 27px,
+        var(--c) -8px 35px,
+        var(--c) 50% 50%,
+        linear-gradient(#000 0 0);
+    mask:
+        linear-gradient(#000 0 0),
+        var(--c) -10px -10px,
+        var(--c) 15px -14px,
+        var(--c) 9px -6px,
+        var(--c) -12px 9px,
+        var(--c) 14px 9px,
+        var(--c) 23px 27px,
+        var(--c) -8px 35px,
+        var(--c) 50% 50%,
+        linear-gradient(#0000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude, add, add, add, add, add, add, add, add;
+    -webkit-mask-repeat: no-repeat;
+    animation: l3 3s infinite;
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    inset: 50% calc(50% - 4px) 0;
+    background: #e0a267;
+    border-radius: 50px;
+}
+
+@keyframes l3 {
+    0% {
+        -webkit-mask-size: auto, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    10% {
+        -webkit-mask-size: auto, 25px 25px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    20% {
+        -webkit-mask-size: auto, 25px 25px, 25px 25px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    30% {
+        -webkit-mask-size: auto, 25px 25px, 25px 25px, 30px 30px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    40% {
+        -webkit-mask-size: auto, 25px 25px, 25px 25px, 30px 30px, 30px 30px, 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    50% {
+        -webkit-mask-size: auto, 25px 25px, 25px 25px, 30px 30px, 30px 30px, 25px 25px, 0 0, 0 0, 0 0, 0 0;
+    }
+    60% {
+        -webkit-mask-size: auto, 25px 25px, 25px 25px, 30px 30px, 30px 30px, 25px 25px, 25px 25px, 0 0, 0 0, 0 0;
+    }
+    70% {
+        -webkit-mask-size: auto, 25px 25px, 25px 25px, 30px 30px, 30px 30px, 25px 25px, 25px 25px, 25px 25px, 0 0;
+    }
+    
+}

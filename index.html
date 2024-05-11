@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Add to Cart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <style>
+            /* Additional styles for hiding content initially */
+            .container {
+                display: none; /* Hide container initially */
+            }
+        </style>
+    </head>
+    <div class="loader"></div>
+    <body>
+        <!-- Loader -->
+        
+        
+        <div class="container">
+            <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/milk-mocha-bear-milkmochabear/sticker_12.png?6808477147e44bb9471b707362073b18&d=200x200">
+            <input type="text" id="input-field" placeholder="Bread">
+            <button id="add-button">Add to cart</button>
+            <ul id="shopping-list">
+                <li>Oranges</li>
+                <li>Hot dogs</li>
+            </ul>
+        </div>
+        <script src="index.js" type="module"></script>
+        <script>
+            // JavaScript to control loader visibility
+            document.addEventListener('DOMContentLoaded', function() {
+                var loader = document.querySelector('.loader');
+                var container = document.querySelector('.container');
+
+                // Set a timer to hide the loader after 15 seconds
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                    container.style.display = 'block';
+                }, 5000); // 15 seconds in milliseconds (1000 ms = 1 second)
+            });
+        </script>
+    </body>
+</html>
